@@ -1,12 +1,13 @@
+///TODO optimize divisible search
 object Problem5 extends EulerSolver {
   def divisibleByOneThroughTwenty(num: Int) = {
-    (1 to 20).filter(i => num % i == 0).length == 20
+    (2 to 20).filter(i => num % i == 0).length == 19
   }
 
   def findFirstDivisibleNum(num: Int): Int = {
     val check = num + 1
     divisibleByOneThroughTwenty(check) match {
-      case true => return check
+      case true =>   check
       case false => findFirstDivisibleNum(check)
     }
   }
