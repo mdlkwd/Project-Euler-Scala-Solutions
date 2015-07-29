@@ -7,7 +7,7 @@ object Problem5 extends EulerSolver {
   def findFirstDivisibleNum(num: Int): Int = {
     val check = num + 1
     divisibleByOneThroughTwenty(check) match {
-      case true =>   check
+      case true => check
       case false => findFirstDivisibleNum(check)
     }
   }
